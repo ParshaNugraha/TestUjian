@@ -27,7 +27,7 @@ public class ListActivity extends AppCompatActivity {
         ArrayList<String> repeatedNamesWithEvenSequence = new ArrayList<>();
         int startingEvenNumber = 2; // Start with the first even number
 
-        for (int i = 0; i < 20; i++) {
+        for (int i = 0; i < 10; i++) {
             for (int j = 0; j < daftar_nama.size(); j++) {
                 int evenNumber = startingEvenNumber + (i * 2); // Calculate even number
                 repeatedNamesWithEvenSequence.add(evenNumber + ". " + daftar_nama.get(j));
