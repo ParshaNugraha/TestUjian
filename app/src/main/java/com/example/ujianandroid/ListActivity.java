@@ -23,13 +23,18 @@ public class ListActivity extends AppCompatActivity {
             daftar_nama.add("data masih kosong");
         }
 
-        // Repeat the names up to 20 times
-        ArrayList<String> repeatedNames = new ArrayList<>();
+        // Repeat the names up to 20 times with even sequence numbers
+        ArrayList<String> repeatedNamesWithEvenSequence = new ArrayList<>();
+        int startingEvenNumber = 2; // Start with the first even number
+
         for (int i = 0; i < 20; i++) {
-            repeatedNames.addAll(daftar_nama);
+            for (int j = 0; j < daftar_nama.size(); j++) {
+                int evenNumber = startingEvenNumber + (i * 2); // Calculate even number
+                repeatedNamesWithEvenSequence.add(evenNumber + ". " + daftar_nama.get(j));
+            }
         }
 
-        ArrayAdapter<String> ad_nama = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, repeatedNames);
+        ArrayAdapter<String> ad_nama = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, repeatedNamesWithEvenSequence);
 
         lvNama.setAdapter(ad_nama);
     }
